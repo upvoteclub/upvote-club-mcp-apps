@@ -2,12 +2,23 @@
 
 Interactive [MCP App](https://claude.com/docs/connectors/building/mcp-apps/getting-started) with an inline **task progress card** for `get_task_status`.
 
-All 7 Public API tools are available; `get_task_status` renders a progress bar UI in Claude.
+All 6 Public API tools are available; `get_task_status` renders a progress bar UI in Claude.
+
+## Upvote Club MCP packages
+
+| Package | Repository | Use case |
+|---------|------------|----------|
+| Core | [upvote-club-mcp-core](https://github.com/upvoteclub/upvote-club-mcp-core) | Shared MCP server library (6 tools) |
+| Local | [upvote-club-mcp-local](https://github.com/upvoteclub/upvote-club-mcp-local) | Cursor, Claude Code, manual Claude Desktop (`stdio`) |
+| MCPB | [upvote-club-mcp-mcpb](https://github.com/upvoteclub/upvote-club-mcp-mcpb) | Single-click Claude Desktop `.mcpb` install |
+| Remote | [upvote-club-mcp-remote](https://github.com/upvoteclub/upvote-club-mcp-remote) | Claude.ai custom connector (Streamable HTTP) |
+| **Apps** | **This repo** — [upvote-club-mcp-apps](https://github.com/upvoteclub/upvote-club-mcp-apps) | MCP Apps + inline task progress UI |
 
 ## Build & run
 
 ```bash
-cd upvote-club-mcp/apps
+git clone https://github.com/upvoteclub/upvote-club-mcp-apps.git
+cd upvote-club-mcp-apps
 npm install
 npm run build
 UPVOTE_API_KEY=upv_... npm start
@@ -25,7 +36,7 @@ UPVOTE_API_KEY=upv_... npm run start:stdio
   "mcpServers": {
     "upvote-club-apps": {
       "command": "node",
-      "args": ["/ABS/PATH/upvote-club-mcp/apps/main.js", "--stdio"],
+      "args": ["/ABS/PATH/upvote-club-mcp-apps/main.js", "--stdio"],
       "env": { "UPVOTE_API_KEY": "upv_..." }
     }
   }
@@ -39,6 +50,18 @@ Expose `http://localhost:8788/mcp` via Cloudflare Tunnel and add as Claude.ai cu
 ## UI design
 
 Follows [MCP Apps design guidelines](https://claude.com/docs/connectors/building/mcp-apps/design-guidelines): inline card, Claude theme CSS variables, max 2 actions (Refresh).
+
+## Tools (6)
+
+`get_api_reference`, `list_platforms`, `create_task`, `get_task_status`, `delete_task`
+
+Full reference: [API_REFERENCE.md](https://github.com/upvoteclub/upvote-club-mcp-core/blob/main/docs/API_REFERENCE.md)
+
+## Related
+
+- Core dependency: [@upvote-club/mcp-core](https://github.com/upvoteclub/upvote-club-mcp-core)
+- HTTP-only connector without UI? → [upvote-club-mcp-remote](https://github.com/upvoteclub/upvote-club-mcp-remote)
+- Claude Desktop bundle? → [upvote-club-mcp-mcpb](https://github.com/upvoteclub/upvote-club-mcp-mcpb)
 
 ## Privacy
 

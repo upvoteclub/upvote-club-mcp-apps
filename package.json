@@ -16,10 +16,13 @@
   },
   "author": "Upvote.club <yes@upvote.club>",
   "license": "MIT",
-  "homepage": "https://upvote.club/api",
+  "homepage": "https://github.com/upvoteclub/upvote-club-mcp-apps#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/upvoteclub/upvote-club-mcp-apps.git"
+  },
+  "bugs": {
+    "url": "https://github.com/upvoteclub/upvote-club-mcp-core/issues"
   },
   "dependencies": {
     "@upvote-club/mcp-core": "github:upvoteclub/upvote-club-mcp-core",
