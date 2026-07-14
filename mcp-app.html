@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Upvote.club Task Progress</title>
+    <style>
+      :root {
+        font-family: var(--font-sans, system-ui, sans-serif);
+        color: var(--color-text-primary, #141413);
+        background: transparent;
+      }
+      body {
+        margin: 0;
+        padding: 12px;
+        box-sizing: border-box;
+      }
+      .card {
+        background: var(--color-background-secondary, #f5f4ed);
+        border: var(--border-width-regular, 0.5px) solid var(--color-border-tertiary, rgba(31, 30, 29, 0.15));
+        border-radius: var(--border-radius-md, 8px);
+        padding: 12px 14px;
+      }
+      h2 {
+        margin: 0 0 10px;
+        font-size: var(--font-heading-md-size, 16px);
+        font-weight: var(--font-weight-semibold, 600);
+      }
+      .task {
+        margin-bottom: 12px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid var(--color-border-tertiary, rgba(31, 30, 29, 0.15));
+      }
+      .task:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+      .meta {
+        font-size: var(--font-text-sm-size, 14px);
+        color: var(--color-text-secondary, #3d3d3a);
+        margin-bottom: 6px;
+      }
+      .bar-wrap {
+        height: 8px;
+        background: var(--color-background-tertiary, #faf9f5);
+        border-radius: var(--border-radius-full, 9999px);
+        overflow: hidden;
+      }
+      .bar {
+        height: 100%;
+        background: var(--color-text-success, #265b19);
+        border-radius: inherit;
+        transition: width 0.3s ease;
+      }
+      .pct {
+        font-size: var(--font-text-sm-size, 14px);
+        margin-top: 4px;
+        color: var(--color-text-tertiary, #73726c);
+      }
+      .empty, .error {
+        font-size: var(--font-text-sm-size, 14px);
+        color: var(--color-text-secondary, #3d3d3a);
+      }
+      .error {
+        color: var(--color-text-danger, #7f2c28);
+      }
+      #refresh-btn {
+        margin-top: 10px;
+        padding: 8px 14px;
+        border: var(--border-width-regular, 0.5px) solid var(--color-border-primary, rgba(31, 30, 29, 0.4));
+        border-radius: var(--border-radius-md, 8px);
+        background: var(--color-background-primary, #fff);
+        color: var(--color-text-primary, #141413);
+        font-weight: var(--font-weight-medium, 500);
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h2>Task Progress</h2>
+      <div id="content" class="empty">Loading task status…</div>
+      <button type="button" id="refresh-btn" hidden>Refresh</button>
+    </div>
+    <script type="module" src="/src/mcp-app.js"></script>
+  </body>
+</html>

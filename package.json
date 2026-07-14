@@ -1,0 +1,36 @@
+{
+  "name": "upvote-club-mcp-apps",
+  "version": "1.0.0",
+  "description": "MCP Apps server for Upvote.club — interactive task progress UI in Claude",
+  "type": "module",
+  "main": "main.js",
+  "scripts": {
+    "build": "cross-env INPUT=mcp-app.html vite build",
+    "start": "node main.js",
+    "start:stdio": "node main.js --stdio",
+    "dev": "concurrently --raw \"cross-env NODE_ENV=development INPUT=mcp-app.html vite build --watch\" \"node main.js\"",
+    "prepare": "npm run build"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "author": "Upvote.club <yes@upvote.club>",
+  "license": "MIT",
+  "homepage": "https://upvote.club/api",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alxgntv/upvote-club-mcp-apps.git"
+  },
+  "dependencies": {
+    "@upvote-club/mcp-core": "github:alxgntv/upvote-club-mcp-core",
+    "@modelcontextprotocol/ext-apps": "^0.2.0",
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0",
+    "cross-env": "^7.0.3",
+    "vite": "^6.0.0",
+    "vite-plugin-singlefile": "^2.1.0"
+  }
+}
