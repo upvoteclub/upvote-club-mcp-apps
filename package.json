@@ -1,7 +1,7 @@
 {
   "name": "upvote-club-mcp-apps",
-  "version": "1.0.0",
-  "description": "MCP Apps server for Upvote.club — interactive task progress UI in Claude",
+  "version": "2.0.0",
+  "description": "Legacy standalone MCP Apps package; the canonical remote server now includes this UI",
   "type": "module",
   "main": "main.js",
   "scripts": {
@@ -26,9 +26,9 @@
   },
   "dependencies": {
     "@upvote-club/mcp-core": "github:upvoteclub/upvote-club-mcp-core",
-    "@modelcontextprotocol/ext-apps": "^0.2.0",
-    "@modelcontextprotocol/sdk": "^1.12.0",
-    "zod": "^3.24.0"
+    "@modelcontextprotocol/ext-apps": "^1.0.1",
+    "@modelcontextprotocol/sdk": "^1.32.1",
+    "zod": "^3.25.76"
   },
   "devDependencies": {
     "concurrently": "^9.1.0",

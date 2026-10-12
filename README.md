@@ -1,17 +1,19 @@
 # Upvote.club — MCP Apps
 
+> Legacy standalone package. New remote installations must use `https://mcp.upvote.club/mcp`; the canonical [upvote-club-mcp-remote](https://github.com/upvoteclub/upvote-club-mcp-remote) server now includes this task-progress UI.
+
 Interactive [MCP App](https://claude.com/docs/connectors/building/mcp-apps/getting-started) with an inline **task progress card** for `get_task_status`.
 
-All 6 Public API tools are available; `get_task_status` renders a progress bar UI in Claude.
+All 5 Public API tools are available; `get_task_status` renders a progress bar UI in Claude.
 
 ## Upvote Club MCP packages
 
 | Package | Repository | Use case |
 |---------|------------|----------|
-| Core | [upvote-club-mcp-core](https://github.com/upvoteclub/upvote-club-mcp-core) | Shared MCP server library (6 tools) |
+| Core | [upvote-club-mcp-core](https://github.com/upvoteclub/upvote-club-mcp-core) | Shared MCP server library (5 tools) |
 | Local | [upvote-club-mcp-local](https://github.com/upvoteclub/upvote-club-mcp-local) | Cursor, Claude Code, manual Claude Desktop (`stdio`) |
 | MCPB | [upvote-club-mcp-mcpb](https://github.com/upvoteclub/upvote-club-mcp-mcpb) | Single-click Claude Desktop `.mcpb` install |
-| Remote | [upvote-club-mcp-remote](https://github.com/upvoteclub/upvote-club-mcp-remote) | Claude.ai custom connector (Streamable HTTP) |
+| Remote | [upvote-club-mcp-remote](https://github.com/upvoteclub/upvote-club-mcp-remote) | Canonical remote endpoint with OAuth and MCP Apps UI |
 | **Apps** | **This repo** — [upvote-club-mcp-apps](https://github.com/upvoteclub/upvote-club-mcp-apps) | MCP Apps + inline task progress UI |
 
 ## Build & run
@@ -51,7 +53,7 @@ Expose `http://localhost:8788/mcp` via Cloudflare Tunnel and add as Claude.ai cu
 
 Follows [MCP Apps design guidelines](https://claude.com/docs/connectors/building/mcp-apps/design-guidelines): inline card, Claude theme CSS variables, max 2 actions (Refresh).
 
-## Tools (6)
+## Tools (5)
 
 `get_api_reference`, `list_platforms`, `create_task`, `get_task_status`, `delete_task`
 
